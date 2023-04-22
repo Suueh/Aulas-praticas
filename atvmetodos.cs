@@ -2,19 +2,20 @@ using System;
 class Program{
     static void Main(){
         
-        Console.WriteLine("Por favor! \nfaça o cadastro a baixo");
+        Console.WriteLine("Por favor! \nFaça o cadastro abaixo");
+        Cadastro();
         Menu();
     }
-    public static void cadastro(){
+    public static void Cadastro(){
         
         //a criaçao do vetr estrava errado estava sem os colchetes apos o ttipo da variavel e estaava sem o tamanho ddo vetor
-        string[] nome = new string[2];
-        double[] altura = new double[2];
-        int[] idade = new int[2];
-        double[] peso = new double[2];
-        char[] sexo = new char[2];
+        string[] nome = new string[1];
+        double[] altura = new double[1];
+        int[] idade = new int[1];
+        double[] peso = new double[1];
+        char[] sexo = new char[1];
 
-        for(int i = 0; i<2; i++){
+        for(int i = 0; i<1; i++){
         //a criacao do vetor estava dentro do for entao toda vvez que o for rodava e o i recbia umm incrementtto o coddigo criava novos vetores
         Console.WriteLine("Digite seu nome:");
         nome[i] = Console.ReadLine();
@@ -25,10 +26,31 @@ class Program{
         idade[i] = Convert.ToInt32(Console.ReadLine());
         Console.WriteLine("Digite seu peso:");
         peso[i] = Convert.ToInt32(Console.ReadLine());
+        fm:
         Console.WriteLine("Digite seu sexo:");
         sexo[i] = Convert.ToChar(Console.ReadLine());
         
-        Console.WriteLine("N do cadastro: {0}", i);
+       switch(sexo[i]){
+
+        case 'm':
+        Console.WriteLine("N do Cadastr: {0}", i);
+        break;
+        case 'M':
+        Console.WriteLine("N do Cadastr: {0}", i);
+        break;
+        case 'f':
+        Console.WriteLine("N do Cadastr: {0}", i);
+        break;
+        case 'F':
+        Console.WriteLine("N do Cadastr: {0}", i);
+        break;
+        default:
+        Console.WriteLine("Você não escolheu nem 'f' nem 'm'  \nPorfavor escolha uma das opções acima");
+        goto fm;
+        break;
+
+       }
+        
     }
         
     }
@@ -37,17 +59,17 @@ class Program{
 
         inicio:
         ini:
-        char escolha;
+        int escolha;
 
-        Console.WriteLine("Escolha uma das opções a seguir");
-        Console.WriteLine("1)Cadastro \n2)Alterar cadastro \n3)Imprimir todos os cadastros \n4)Excluir cadastro \n5)Limpar tela \n6)Sair");
-        escolha = Convert.ToChar(Console.ReadLine());
+        Console.WriteLine("Bem Vindo! \nVocê pode escolher uma das opções a seguir");
+        Console.WriteLine("1)Cadastro \n2)Alterar um cadastro \n3)Imprimir todos os cadastros \n4)Excluir cadastro \n5)Limpar tela \n6)Sair");
+        escolha = Convert.ToInt32(Console.ReadLine());
     
 
         switch(escolha){
 
             case '1':
-            cadastro();
+            Cadastro();
             goto inicio;
             break;
 
