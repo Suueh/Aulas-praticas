@@ -19,7 +19,7 @@ class Program{
         //a criacao do vetor estava dentro do for entao toda vvez que o for rodava e o i recbia umm incrementtto o coddigo criava novos vetores
         Console.WriteLine("Digite seu nome:");
         nome[i] = Console.ReadLine();
-        // o inddice da posicciçao esttavaa sempre 0 entao naao  acumulava os cadastros
+        // o indice da posiçao estava sempre 0 entao nao  acumulava os cadastros
         Console.WriteLine("Digite sua altura:");
         altura[i] = Convert.ToDouble(Console.ReadLine());
         Console.WriteLine("Digite seu idade:");
