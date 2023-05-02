@@ -14,8 +14,11 @@ class Program{
         int[] idade = new int[1];
         double[] peso = new double[1];
         char[] sexo = new char[1];
+        int n = 0;
 
         for(int i = 0; i<1; i++){
+         n++;
+            
         //a criacao do vetor estava dentro do for entao toda vvez que o for rodava e o i recbia umm incrementtto o coddigo criava novos vetores
         Console.WriteLine("Digite seu nome:");
         nome[i] = Console.ReadLine();
@@ -33,26 +36,27 @@ class Program{
        switch(sexo[i]){
 
         case 'm':
-        Console.WriteLine("N do Cadastr: {0}", i);
+        Console.WriteLine("N do Cadastro: {0}", n);
         break;
         case 'M':
-        Console.WriteLine("N do Cadastr: {0}", i);
+        Console.WriteLine("N do Cadastro: {0}", n);
         break;
         case 'f':
-        Console.WriteLine("N do Cadastr: {0}", i);
+        Console.WriteLine("N do Cadastro: {0}", n);
         break;
         case 'F':
-        Console.WriteLine("N do Cadastr: {0}", i);
+        Console.WriteLine("N do Cadastro: {0}", n);
         break;
         default:
         Console.WriteLine("Você não escolheu nem 'f' nem 'm'  \nPorfavor escolha uma das opções acima");
         goto fm;
         break;
 
+        
        }
-        
+       
     }
-        
+       
     }
 
     public static void Menu(){
@@ -68,32 +72,32 @@ class Program{
 
         switch(escolha){
 
-            case '1':
+            case 1:
             Cadastro();
             goto inicio;
             break;
 
-            case '2':
+            case 2:
             AlterCadastro();
             goto inicio;
             break;
 
-            case '3':
+            case 3:
             ImpriCadastro();
             goto inicio;
             break;
 
-            case '4':
+            case 4:
             excadastro();
             goto inicio;
             break;
 
-            case '5':
+            case 5:
             Limpar();
             goto inicio;
             break;
 
-            case '6':
+            case 6:
             Sair();
             goto inicio;
             break;
