@@ -16,8 +16,11 @@ class Program{
         int[] idade = new int[1];
         double[] peso = new double[1];
         char[] sexo = new char[1];
+        int n = 0;
 
         for(int i = 0; i<1; i++){
+         n++;
+            
         //a criacao do vetor estava dentro do for entao toda vvez que o for rodava e o i recbia umm incrementtto o coddigo criava novos vetores
         Console.Write("Digite seu nome:");
         nome[i] = Console.ReadLine();
@@ -35,21 +38,35 @@ class Program{
        switch(sexo[i]){
 
         case 'm':
+<<<<<<< HEAD
         break;
         case 'M':
         break;
         case 'f':
         break;
         case 'F':
+=======
+        Console.WriteLine("N do Cadastro: {0}", n);
+        break;
+        case 'M':
+        Console.WriteLine("N do Cadastro: {0}", n);
+        break;
+        case 'f':
+        Console.WriteLine("N do Cadastro: {0}", n);
+        break;
+        case 'F':
+        Console.WriteLine("N do Cadastro: {0}", n);
+>>>>>>> 8524f84bec4df38313d19c9e909368c5fdee8c17
         break;
         default:
         Console.WriteLine("Você não escolheu nem 'f' nem 'm'  \nPorfavor escolha uma das opções acima");
         goto fm;
 
+        
        }
-        
+       
     }
-        
+       
     }
     public static void Cadastros(){
 
@@ -119,7 +136,11 @@ class Program{
         switch(escolha){
 
             case 1:
+<<<<<<< HEAD
             Cadastros();
+=======
+            Cadastro();
+>>>>>>> 8524f84bec4df38313d19c9e909368c5fdee8c17
             goto inicio;
             
 
