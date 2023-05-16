@@ -18,7 +18,7 @@ class Program{
         Console.Clear();
         Console.Write("Quantos cadastros você deseja fazer:");
         tc = Convert.ToInt32(Console.ReadLine());
-
+        
         for(int i = 0; i<tc; i++){
             
 
@@ -75,6 +75,7 @@ class Program{
 
             case 1:
             Cadastros();
+            //FAZER!! Quando fazemos nossos primeiros cadastros, voltamos no menu e irmos em cadastro novamente, está alterado os cadastros alteriores
             goto inicio;
             
 
@@ -89,6 +90,7 @@ class Program{
 
             case 4:
             Impritdcadastros();
+            goto inicio;
             
 
             case 5:
@@ -111,29 +113,61 @@ class Program{
         }
     }
     public static void excadastro(){
-        /*char escolha;
 
-        Console.WriteLine("Tem certeza que deseja excluir? [S] [N]");
-        escolha = Convert.ToChar(Console.ReadLine());
-        if(escolha == 's' || escolha == 'S'){
+        if(idade[0] == 0){
+            Console.WriteLine("Você não fez seu primeiro cadastro!!!");
+            Console.WriteLine("Digite qualquer tecla para voltar pro menu:");
+            Console.ReadKey();
+            Console.Clear();
+        }
+        else{
 
-            nome = "";
-            altura = 0;
-            idade = 0;
-            peso = 0;
-            sexo = ' ';
+        int esc;
 
-        }*/
+        Console.WriteLine("Digite o cadastro que deseja excluir?");
+        esc = Convert.ToInt32(Console.ReadLine());
 
+        if(idade[esc] == 0){
 
+            Console.WriteLine("Cadastro inexistente ou ja excluido");
+            
 
+        }
+        else{
+
+        nome[esc] = " ";
+        altura[esc] = 0;
+        idade[esc] = 0;
+        peso[esc] = 0;
+        sexo[esc] = ' ';
+
+        Console.WriteLine("Cadastro excluido com sucesso!");
+        }
+        }
     }
     public static void AlterCadastro(){
+        
+        if(idade[0] == 0){
+            Console.WriteLine("Você não fez seu primeiro cadastro!!!");
+            Console.WriteLine("Digite qualquer tecla para voltar pro menu:");
+            Console.ReadKey();
+            Console.Clear();
+        }
+        else{
 
         int nc;
 
         Console.WriteLine("Qual cadastro você deseja alterar?");
         nc = Convert.ToInt32(Console.ReadLine());
+
+        if(idade[nc] == 0){
+            Console.WriteLine("Cadastro inexistente...");
+            Console.WriteLine("Digite qualquer tecla para voltar pro menu:");
+            Console.ReadKey();
+            Console.Clear();
+            
+        }
+        else{
 
         Console.Write("Digite seu nome:");
         nome[nc] = Console.ReadLine();
@@ -146,6 +180,8 @@ class Program{
         fm:
         Console.Write("Digite seu sexo:");
         sexo[nc] = Convert.ToChar(Console.ReadLine());
+
+        Console.Clear();
         
        switch(sexo[nc]){
 
@@ -168,14 +204,32 @@ class Program{
        }
        
         Console.WriteLine("Cadastro alterado com sucesso!");
-
+        }
+        }
     }
     public static void ImpriCadastro(){
+
+        if(idade[0] == 0){
+            Console.WriteLine("Você não fez seu primeiro cadastro!!!");
+            Console.WriteLine("Digite qualquer tecla para voltar pro menu:");
+            Console.ReadKey();
+            Console.Clear();
+        }
+        else{
         int nc;
 
         Console.Clear();
         Console.WriteLine("Qual cadastro você deseja Imprimir?");
         nc = Convert.ToInt32(Console.ReadLine());
+
+        if(idade[nc] == 0){
+            Console.WriteLine("Cadastro inexistente...");
+            Console.WriteLine("Digite qualquer tecla para voltar pro menu:");
+            Console.ReadKey();
+            Console.Clear();
+            
+        }
+        else{
 
         Console.WriteLine("Nome: {0}", nome[nc]);
         Console.WriteLine("Altura: {0}", altura[nc]);
@@ -185,34 +239,50 @@ class Program{
 
         Console.WriteLine("Digite qualquer tecla para voltar pro menu");
         Console.ReadKey();
+        Console.Clear();
 
+        }
+        }
     }
 
-    public static void Impritdcadstros(){
+    public static void Impritdcadastros(){
 
+        if(idade[0] == 0){
+            Console.WriteLine("Você não fez seu primeiro cadastro!!!");
+            Console.WriteLine("Digite qualquer tecla para voltar pro menu:");
+            Console.ReadKey();
+            Console.Clear();
+        }
+        else{
         char nc;
-        int c;
 
         Console.WriteLine("Tem certeza que você deseja imprimir todos os cadastros? [S] [N]");
         nc = Convert.ToChar(Console.ReadLine());
 
-        if(nc == 'S'){
+        if(nc == 'S' || nc == 's'){
 
             for(int i = 0; i<tc; i++){
+                
 
-                Console.WriteLine("Nome: {0}", nome[c]);
-                Console.WriteLine("Altura: {0}", altura[c]);
-                Console.WriteLine("Idade: {0}", idade[c]);
-                Console.WriteLine("Peso: {0}", peso[nc]);
-                Console.WriteLine("Sexualidade: {0}", sexo[nc]);
+                Console.WriteLine("N do Cadastro: {0}", i);
+                Console.WriteLine("Nome: {0}", nome[i]);
+                Console.WriteLine("Altura: {0}", altura[i]);
+                Console.WriteLine("Idade: {0}", idade[i]);
+                Console.WriteLine("Peso: {0}", peso[i]);
+                Console.WriteLine("Sexualidade: {0}", sexo[i]);
 
+                Console.WriteLine("____________\\____________");
 
+                }
+                Console.WriteLine("Digite qualquer tecla para voltar pro menu:");
+                Console.ReadKey();
+                Console.Clear();
             }
-
+        }
         }
         
 
-    }
+    
     public static void Limpar(){
 
         Console.Clear();
@@ -222,3 +292,4 @@ class Program{
 
     }
     }
+    
