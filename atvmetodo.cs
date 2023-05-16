@@ -1,7 +1,7 @@
 using System;
 class Program{
 
-        public static int tc;
+        public static int tc = 100;
         public static string [] nome = new string[tc];
        public static double[] altura = new double[tc];
        public static int[] idade = new int[tc];
@@ -20,6 +20,8 @@ class Program{
         tc = Convert.ToInt32(Console.ReadLine());
 
         for(int i = 0; i<tc; i++){
+            
+
         Console.Write("Digite seu nome:");
         nome[i] = Console.ReadLine();
         Console.Write("Digite sua altura:");
@@ -51,7 +53,8 @@ class Program{
         goto fm;
 
        }
-       
+
+        //n++;
         Console.WriteLine("Cadastro feito com sucesso!");
     }
 
@@ -64,8 +67,7 @@ class Program{
 
         Console.WriteLine("Bem Vindo!");
         inicio:
-        ini:
-        Console.WriteLine("Você pode escolher uma das opções a seguir: \n1)Cadastro \n2)Alterar um cadastro \n3)Imprimir um dos cadastros \n4)Excluir cadastro \n5)Limpar tela \n6)Sair");
+        Console.WriteLine("Você pode escolher uma das opções a seguir: \n1)Fazer um cadastro \n2)Alterar um cadastro \n3)Imprimir um dos cadastros \n4)Imprimir todos os cadastros \n5)Excluir cadastro \n6)Limpar tela \n7)Sair");
         escolha = Convert.ToInt32(Console.ReadLine());
     
 
@@ -84,25 +86,28 @@ class Program{
             case 3:
             ImpriCadastro();
             goto inicio;
-            
 
             case 4:
+            Impritdcadastros();
+            
+
+            case 5:
             excadastro();
             goto inicio;
             
 
-            case 5:
+            case 6:
             Limpar();
             goto inicio;
             
 
-            case 6:
+            case 7:
             Sair();
-            goto inicio;
+            break;
         
             default:
             Console.WriteLine("Você não escolheu nenhuma das opções a cima");
-            goto ini;
+            goto inicio;
         }
     }
     public static void excadastro(){
@@ -168,6 +173,7 @@ class Program{
     public static void ImpriCadastro(){
         int nc;
 
+        Console.Clear();
         Console.WriteLine("Qual cadastro você deseja Imprimir?");
         nc = Convert.ToInt32(Console.ReadLine());
 
@@ -176,6 +182,35 @@ class Program{
         Console.WriteLine("Idade: {0}", idade[nc]);
         Console.WriteLine("Peso: {0}", peso[nc]);
         Console.WriteLine("Sexualidade: {0}", sexo[nc]);
+
+        Console.WriteLine("Digite qualquer tecla para voltar pro menu");
+        Console.ReadKey();
+
+    }
+
+    public static void Impritdcadstros(){
+
+        char nc;
+        int c;
+
+        Console.WriteLine("Tem certeza que você deseja imprimir todos os cadastros? [S] [N]");
+        nc = Convert.ToChar(Console.ReadLine());
+
+        if(nc == 'S'){
+
+            for(int i = 0; i<tc; i++){
+
+                Console.WriteLine("Nome: {0}", nome[c]);
+                Console.WriteLine("Altura: {0}", altura[c]);
+                Console.WriteLine("Idade: {0}", idade[c]);
+                Console.WriteLine("Peso: {0}", peso[nc]);
+                Console.WriteLine("Sexualidade: {0}", sexo[nc]);
+
+
+            }
+
+        }
+        
 
     }
     public static void Limpar(){
