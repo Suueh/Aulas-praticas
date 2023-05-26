@@ -13,54 +13,8 @@ class Program{
         Menu();
 
     }
-    public static void Cadastros(){
 
-        Console.Clear();
-        Console.Write("Quantos cadastros você deseja fazer:");
-        tc = Convert.ToInt32(Console.ReadLine());
-        
-        for(int i = 0; i<tc; i++){
-            
-
-        Console.Write("Digite seu nome:");
-        nome[i] = Console.ReadLine();
-        Console.Write("Digite sua altura:");
-        altura[i] = Convert.ToDouble(Console.ReadLine());
-        Console.Write("Digite sua idade:");
-        idade[i] = Convert.ToInt32(Console.ReadLine());
-       Console.Write("Digite seu peso:");
-        peso[i] = Convert.ToInt32(Console.ReadLine());
-        fm:
-        Console.Write("Digite seu sexo:");
-        sexo[i] = Convert.ToChar(Console.ReadLine());
-        
-       switch(sexo[i]){
-
-        case 'm':
-        Console.WriteLine("N do Cadastro: {0}", i);
-        break;
-        case 'M':
-        Console.WriteLine("N do Cadastro: {0}", i);
-        break;
-        case 'f':
-        Console.WriteLine("N do Cadastro: {0}", i);
-        break;
-        case 'F':
-        Console.WriteLine("N do Cadastro: {0}", i);
-        break;
-        default:
-        Console.WriteLine("Você não escolheu nem 'f' nem 'm'  \nPorfavor escolha uma das opções acima");
-        goto fm;
-
-       }
-
-        //n++;
-        Console.WriteLine("Cadastro feito com sucesso!");
-    }
-
-    }
-
-    public static void Menu(){
+     public static void Menu(){
 
         
         int escolha;
@@ -112,6 +66,52 @@ class Program{
             goto inicio;
         }
     }
+
+    public static void Cadastros(){
+
+        Console.Clear();
+        Console.Write("Quantos cadastros você deseja fazer:");
+        tc = Convert.ToInt32(Console.ReadLine());
+        
+        for(int i = 0; i<tc; i++){
+            
+        Console.Write("Digite seu nome:");
+        nome[i] = Console.ReadLine();
+        Console.Write("Digite sua altura:");
+        altura[i] = Convert.ToDouble(Console.ReadLine());
+        Console.Write("Digite sua idade:");
+        idade[i] = Convert.ToInt32(Console.ReadLine());
+       Console.Write("Digite seu peso:");
+        peso[i] = Convert.ToInt32(Console.ReadLine());
+        fm:
+        Console.Write("Digite seu sexo:");
+        sexo[i] = Convert.ToChar(Console.ReadLine());
+        
+       switch(sexo[i]){
+
+        case 'm':
+        Console.WriteLine("N do Cadastro: {0}", i);
+        break;
+        case 'M':
+        Console.WriteLine("N do Cadastro: {0}", i);
+        break;
+        case 'f':
+        Console.WriteLine("N do Cadastro: {0}", i);
+        break;
+        case 'F':
+        Console.WriteLine("N do Cadastro: {0}", i);
+        break;
+        default:
+        Console.WriteLine("Você não escolheu nem 'f' nem 'm'  \nPorfavor escolha uma das opções acima");
+        goto fm;
+
+       }
+
+        //n++;
+        Console.WriteLine("Cadastro feito com sucesso!");
+    }
+    }
+
     public static void excadastro(){
 
         if(idade[0] == 0){
@@ -131,15 +131,39 @@ class Program{
 
             Console.WriteLine("Cadastro inexistente ou ja excluido");
             
-
         }
         else{
-
+            
+    
         nome[esc] = " ";
         altura[esc] = 0;
         idade[esc] = 0;
         peso[esc] = 0;
         sexo[esc] = ' ';
+
+        for(int a = 0;a== idade[esc];){
+            nome[esc] = nome[esc + 95];
+        }
+        for(int b = 0;b== idade[esc];){
+
+            altura[esc] = altura[esc + 95];
+
+        }
+        for(int c = 0;c== idade[esc];){
+
+            idade[esc] = idade[esc + 95];
+
+        }
+        for(int d = 0;d== idade[esc];){
+            
+            peso[esc] = peso[esc + 95];
+
+        }
+        for(int e = 0;e== idade[esc];){
+
+            sexo[esc] = sexo[esc + 95];
+
+        }
 
         Console.WriteLine("Cadastro excluido com sucesso!");
         }
@@ -291,5 +315,6 @@ class Program{
     public static void Sair(){
 
     }
-    }
+}
     
+
